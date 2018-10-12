@@ -58,6 +58,13 @@ $ git config --global user.email "johndoe@example.com"
 
 - `$ git --version` should print out the version of git that is installed
 
+# Clone this repo
+
+## All OS's
+
+- Run the following in a directory where you would like your project to be:
+- `git clone https://github.com/ucladevx/devxbootcamp-2018fall`
+
 # Setup Docker and Docker-Compose
 
 ## Linux
@@ -92,6 +99,8 @@ $ git config --global user.email "johndoe@example.com"
 
 ### On completion
 
+Navigate to the directory of your cloned repository
+
 Running `$ make devup` will run the postgres database and `$ docker ps` should
 show the database running. If any of those commands fail due to *permissions
 errors*, refer back to `Add your user to the docker group`. If those errors
@@ -113,6 +122,8 @@ you can verify with `$ docker ps`.
 
 ### On completion
 
+Navigate to the directory of your cloned repository
+
 Running `$ make devup` will run the postgres database and `$ docker ps` should
 show the database running.
 
@@ -125,6 +136,8 @@ can verify with `$ docker ps`.
   https://docs.docker.com/v17.09/docker-for-windows/install/#what-to-know-before-you-install)
 
 ### On completion
+
+Navigate to the directory of your cloned repository
 
 Running `$ make devup` will run the postgres database and `$ docker ps` should
 show the database running.
