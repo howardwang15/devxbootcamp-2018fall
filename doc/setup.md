@@ -134,8 +134,8 @@ can verify with `$ docker ps`.
 
 ## Windows
 
-- Install [Docker for Windows](
-  https://docs.docker.com/v17.09/docker-for-windows/install/#what-to-know-before-you-install)
+- Install [Docker Toolbox for Windows](
+  https://docs.docker.com/toolbox/toolbox_install_windows/)
 
 ### On completion
 
