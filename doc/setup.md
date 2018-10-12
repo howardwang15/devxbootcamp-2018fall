@@ -119,6 +119,8 @@ you can verify with `$ docker ps`.
     - `$ brew install docker-completion`
     - `$ brew install docker-compose-completion`
     - `$ brew install docker-machine-completion`
+- Run the `Docker` app from the spotlight bar
+- A whale icon should appear in your toolbar
 
 ### On completion
 
