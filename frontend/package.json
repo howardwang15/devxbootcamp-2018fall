@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production --env.production --progress --color",
-    "dev": "BABLE_ENV=dev webpack-dev-server --mode development --env.development -w --hot --progress --color",
+    "dev": "webpack-dev-server --mode development --env.development -w --hot --progress --color",
     "serve": "node server.js"
   },
   "author": "",

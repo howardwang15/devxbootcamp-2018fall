@@ -36,7 +36,11 @@ export const mapStateToProps = (state) => ({
   description: state.user.description,
 });
 
-export default connect(
+// connector is a function that accepts a React component
+// and returns a Redux-connected wrapper of that component
+const connector = connect(
   mapStateToProps,
   {getUser},
-)(HomePage);
+);
+
+export default connector(HomePage);

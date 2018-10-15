@@ -14,17 +14,29 @@ export class GrowlFeed extends React.Component {
 
   constructor(props) {
     super(props);
-    // TODO: Implement
+    props.getGrowls();
   }
 
   render() {
-    // TODO: Implement using filter, map, and the Growl component imported above
-    return null;
+    return (
+      <div className="growl-list">
+        {this.props.growls.filter(this.props.growlFilter).map((growl) => (
+          <Growl
+            key={growl.id}
+            id={growl.id}
+            userId={growl.user_id}
+            userName={growl.user_name}
+            text={growl.text}
+            createdAt={growl.created_at}
+          />
+        ))}
+      </div>
+    );
   }
 }
 
 export const mapStateToProps = (state) => ({
-  // TODO: Implement
+  growls: state.growls.growlsList,
 });
 
 export default connect(
