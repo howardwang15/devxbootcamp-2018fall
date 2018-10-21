@@ -1,5 +1,8 @@
 const express = require('express');
-const {ownerMiddleware} = require('../middleware/auth.js');
+const {
+  ownerMiddleware,
+  loggedInMiddleware,
+} = require('../middleware/auth.js');
 const UserController = (userModel, tokenService) => {
   const router = express.Router();
 
@@ -21,7 +24,7 @@ const UserController = (userModel, tokenService) => {
   //    "message": String
   // }
   // TODO check if user actually exists
-  router.get('/:id', async (req, res) => {
+  router.get('/:id', loggedInMiddleware(tokenService), async (req, res) => {
     const params = req.params;
     const id = parseInt(params.id, 10);
     const [user, err] = await userModel.getUser(id);

@@ -41,7 +41,6 @@ const GrowlController = (growlModel, tokenService) => {
   // /growl POST
   // Body: {
   //    text: String
-  //    user_id: Int
   // }
   //
   // Creates a growl. Returns the growl id in the format
@@ -51,13 +50,32 @@ const GrowlController = (growlModel, tokenService) => {
   //    }
   // }
   router.post('/', async (req, res) => {
-    // BOOTCAMP
+    if (!req.body)
+      return res.status(400).json({
+        message: 'Malformed Request',
+      });
+    const body = req.body;
+    const text = body.text;
+    const user_id = body.user_id;
+    const [data, err] = await growlModel.createGrowl(text, user_id);
+
+    if (err) {
+      return res.status(400).json({
+        message: err.message,
+      });
+    }
+    return res.status(200).json({
+      data: {
+        id: data.id,
+      },
+    });
   });
 
   // TODO check ownership with SQL relations
   router.delete('/:id', loggedInMiddleware(tokenService), async (req, res) => {
     const params = req.params;
     const id = parseInt(params.id, 10);
+    const user_id = req.ctx['userid'];
     const err = await growlModel.deleteGrowl(id, user_id);
     if (err) {
       return res.status(400).json({

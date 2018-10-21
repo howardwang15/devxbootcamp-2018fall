@@ -34,7 +34,15 @@ const GrowlRepo = (postgres) => {
   // Uses createGrowlSQL to create a new growl, and return either (growl, null)
   // or (null, error)
   const createGrowl = async (text, user_id) => {
-    // BOOTCAMP
+    const values = [text, user_id];
+    try {
+      const client = await postgres.connect();
+      const res = await client.query(createGrowlSQL, values);
+      client.release();
+      return [res.rows[0], null];
+    } catch (err) {
+      return [null, err];
+    }
   };
 
   // Base SQL query to return growls from the growl table. By default this will
@@ -110,10 +118,15 @@ const GrowlRepo = (postgres) => {
 
   // Deletes the growl, and either returns an error if something went wrong, or
   // null
-  const deleteGrowl = async (id) => {
+  const deleteGrowl = async (id, user_id) => {
     const values = [id];
     try {
       const client = await postgres.connect();
+      const res = await client.query(getGrowlByIDSQL, values);
+      const growl = res.rows[0];
+      if (!growl.user_id || growl.user_id !== user_id) {
+        return Error('user does not own growl');
+      }
       await client.query(deleteGrowlSQL, values);
       client.release();
       return null;
