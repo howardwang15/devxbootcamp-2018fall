@@ -1,6 +1,3 @@
-# METADATA
-VERSION=v0.1.0
-
 # CMD
 BIN_DIR=bin
 
@@ -26,3 +23,9 @@ serve: build start
 
 format:
 	npx prettier --write "src/**/*.js"
+
+IMAGE_NAME=growlerfrontend
+VERSION=v0.1.0
+
+dockerimg:
+	docker build -f ./Dockerfile -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .

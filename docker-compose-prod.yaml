@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  frontend:
+    image: growlerfrontend:latest
+    ports:
+      - 3030:3030
+    restart: unless-stopped
+  backend:
+    image: growlerbackend:latest
+    ports:
+      - 31337:31337
+    restart: unless-stopped
