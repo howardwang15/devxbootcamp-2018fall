@@ -27,7 +27,7 @@ input {
 html,
 body {
   font-size: 12px;
-  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   line-height: 1.5;
   letter-spacing: normal;
   font-weight: 400;
@@ -35,6 +35,9 @@ body {
   color: rgba(0, 0, 0, 0.87);
   overflow-wrap: break-word;
   transition: 0.125s cubic-bezier(0.4, 0, 0.2, 1); }
+  html button,
+  body button {
+    font-family: "Nunito", Arial, sans-serif; }
   html.dark h1,
   html.dark h2,
   html.dark h3,
@@ -50,7 +53,7 @@ body {
     color: rgba(255, 255, 255, 0.9); }
   html.dark a,
   body.dark a {
-    color: #2f67b1; }
+    color: #7eacf8; }
   @media (min-width: 768px) and (max-width: 1151px) {
     html,
     body {
@@ -115,7 +118,7 @@ body {
     font-size: 0.8em; }
   html a,
   body a {
-    color: #224a7f;
+    color: #4285f4;
     text-decoration: unset; }
     html a:hover,
     body a:hover {
@@ -160,15 +163,17 @@ input[type='text'] {
 nav.navbar {
   width: 100%;
   height: 70px;
-  background-color: #2f67b1;
+  background-color: #4285f4;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between; }
   nav.navbar .brand {
-    font-size: 32px; }
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Pangolin", cursive; }
     nav.navbar .brand a {
-      color: #ffb74d; }
+      color: #fbbc05; }
   nav.navbar .links {
     display: flex;
     align-items: center;
@@ -181,15 +186,15 @@ nav.navbar {
       font-weight: bold;
       margin: 5px; }
       nav.navbar .links .link-item a {
-        color: #ffb74d; }
+        color: #fbbc05; }
       nav.navbar .links .link-item.new-growl, nav.navbar .links .link-item.log-out {
         padding: 0 10px;
         height: 100%;
         border-radius: 4px;
-        background-color: #ffb74d;
+        background-color: #fbbc05;
         cursor: pointer; }
         nav.navbar .links .link-item.new-growl a, nav.navbar .links .link-item.log-out a {
-          color: #224a7f; }
+          color: #4285f4; }
 
 .skeleton {
   width: 100%;
@@ -217,12 +222,12 @@ nav.navbar {
 
 .tab-selector {
   display: flex;
-  border: 2px solid #224a7f; }
+  border: 2px solid #4285f4; }
   .tab-selector .tab-selector-item {
     padding: 10px;
     flex-grow: 0; }
     .tab-selector .tab-selector-item.selected {
-      background-color: #224a7f;
+      background-color: #4285f4;
       color: #ffffff; }
 
 *,
@@ -254,7 +259,7 @@ input {
 html,
 body {
   font-size: 12px;
-  font-family: "Lato", Arial, Verdana, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   line-height: 1.5;
   letter-spacing: normal;
   font-weight: 400;
@@ -262,6 +267,9 @@ body {
   color: rgba(0, 0, 0, 0.87);
   overflow-wrap: break-word;
   transition: 0.125s cubic-bezier(0.4, 0, 0.2, 1); }
+  html button,
+  body button {
+    font-family: "Nunito", Arial, sans-serif; }
   html.dark h1,
   html.dark h2,
   html.dark h3,
@@ -277,7 +285,7 @@ body {
     color: rgba(255, 255, 255, 0.9); }
   html.dark a,
   body.dark a {
-    color: #2f67b1; }
+    color: #7eacf8; }
   @media (min-width: 768px) and (max-width: 1151px) {
     html,
     body {
@@ -342,7 +350,7 @@ body {
     font-size: 0.8em; }
   html a,
   body a {
-    color: #224a7f;
+    color: #4285f4;
     text-decoration: unset; }
     html a:hover,
     body a:hover {
@@ -378,7 +386,7 @@ body {
     text-transform: uppercase; }
 
 form {
-  background-color: rgba(47, 103, 177, 0.3);
+  background-color: rgba(126, 172, 248, 0.3);
   padding: 10px; }
 
 .growl-card {
@@ -414,15 +422,27 @@ form {
   padding: 10px;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.15); }
+  .profile-card h3 {
+    border-bottom: 2px solid rgba(251, 188, 5, 0.5); }
 
 .home-page {
   display: flex;
   align-items: flex-start; }
   .home-page > * {
     margin: 0 10px; }
-  .home-page .growl-feed-block {
+  .home-page .home-page-profile-section {
+    max-width: 300px; }
+  .home-page .home-page-growl-feed-section {
     flex-grow: 1; }
-    .home-page .growl-feed-block > * {
+    .home-page .home-page-growl-feed-section > * {
       margin-bottom: 10px;
       border-radius: 3px; }
+  @media screen and (max-width: 768px) {
+    .home-page {
+      flex-direction: column; }
+      .home-page > * {
+        width: 100%; }
+      .home-page .home-page-profile-section {
+        max-width: none;
+        margin-bottom: 20px; } }
 

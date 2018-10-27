@@ -12,7 +12,7 @@ export const getUserSuccess = (user) => ({
 export const getUser = () => (dispatch, getState) =>
   axios({
     method: API.GET_USER.METHOD,
-    url: `${API.GET_USER.URL}/${getState().auth.userid}`,
+    url: `${API.GET_USER.URL}/${getState().auth.userId}`,
   }).then((response) => {
     dispatch(getUserSuccess(response.data.data));
   });

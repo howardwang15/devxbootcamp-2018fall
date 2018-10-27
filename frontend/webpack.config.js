@@ -100,7 +100,7 @@ const createConfig = (env, argv) => {
   if (env && env.development) {
     config.plugins.push(
       new webpack.DefinePlugin({
-        APIBASE_URL: JSON.stringify('http://localhost:31337api'),
+        APIBASE_URL: JSON.stringify('http://localhost:31337/api'),
       }),
     );
   } else {

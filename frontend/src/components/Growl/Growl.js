@@ -9,7 +9,7 @@ const Growl = ({id, userId, userName, text, createdAt}) => (
       <p className="growl-user-name">{userName}</p>
       {createdAt && (
         <p className="growl-created-at">
-          {dateFormat(createdAt, 'mmm d, yyyy h:mm tt')}
+          {dateFormat(createdAt, 'mmm d, yyyy h:MM tt')}
         </p>
       )}
     </div>

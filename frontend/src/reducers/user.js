@@ -1,10 +1,10 @@
 import * as ACTIONS from '../actions/types';
 
-// TODO: Set these to null when we hook up to 
+// TODO: Set these to null when we hook up to
 const DEFAULT_USER_STATE = {
-  id: '1',
-  name: 'Joe Bruin',
-  description: 'A kickass DevX developer that knows git, test-driven development, and deployment!',
+  id: null,
+  name: null,
+  description: null,
 };
 
 const userReducer = (state = DEFAULT_USER_STATE, {type, payload}) => {

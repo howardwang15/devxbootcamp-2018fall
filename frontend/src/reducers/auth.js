@@ -2,16 +2,11 @@ import * as ACTIONS from '../actions/types';
 import {getCookies} from '../utils/cookie';
 
 export const DEFAULT_AUTH_STATE = {
-  // TODO: Change this to default to false when we hook up to backend
-  loggedIn: true,
-  // TODO: Change this to '' when we hook up to backend
-  userId: '1',
+  loggedIn: false,
+  userId: null,
 };
 
 const initState = () => {
-  // TODO: Remove this line when we hook up to backend
-  return DEFAULT_AUTH_STATE;
-
   const cookies = getCookies();
   const userId = cookies['auth-login-as'];
   const tokenExists = !!cookies['auth-token'];
