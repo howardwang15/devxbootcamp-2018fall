@@ -4,7 +4,7 @@ import mockGrowls from '../sample-data/growls';
 const DEFAULT_GROWLS_STATE = {
   successfulCreation: null,
   // TODO: Reset this to [] once you're ready to hook it up to the backend
-  growlsList: mockGrowls,
+  growlsList: [],
 };
 
 const growlsReducer = (state = DEFAULT_GROWLS_STATE, {type, payload}) => {

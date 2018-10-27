@@ -37,7 +37,10 @@ export const createGrowl = (text, callback = DEFAULT_CALLBACK) => (
   axios({
     method: API.CREATE_GROWL.METHOD,
     url: API.CREATE_GROWL.URL,
-    data: {text},
+    data: {
+      text,
+      user_id: getState().auth.userId,
+    },
   }).then((response) => {
     dispatch(createGrowlSuccess());
     dispatch(getGrowls());
