@@ -10,4 +10,6 @@ services:
     image: growlerbackend:latest
     ports:
       - 31337:31337
+    environment:
+      POSTGRES_HOSTNAME: postgres
     restart: unless-stopped
